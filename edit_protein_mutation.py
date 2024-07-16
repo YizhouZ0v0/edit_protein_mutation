@@ -12,7 +12,7 @@ def DNA_reverse_complement2(sequence):
     Returns:
         str: The reverse complement of the input DNA sequence.
     """
-    trantab = str.maketrans('ACGTacgtRYMKrymkVBHDvbhd', 'TGCAtgcaYRKMyrkmBVDHbvdh')     # trantab = str.maketrans(intab, outtab)   # 制作翻译表
+    trantab = str.maketrans('ACGTacgtRYMKrymkVBHDvbhd', 'TGCAtgcaYRKMyrkmBVDHbvdh')
     return sequence.translate(trantab)[::-1]
 
 coden2aa_dict = {'TTT': "F", 'TTC': "F", 'TTA': "L", 'TTG': "L", 'CTA': "L", 'CTT': "L", 'CTC': "L", 'CTG': "L",
@@ -34,7 +34,7 @@ def get_percentage(file,ORF_start=3,ORF_end=12,cut_off=0.01,reverse=False):
         cut_off (float, optional): Threshold or cut-off value for processing. Must be a float. Defaults to 0.01.
         reverse (bool, optional): Process in reverse sequence. Defaults to False.
     Returns:
-        _type_: _description_
+        [protein_dict:dict, frameshift_mutation:float, early_stopping:float, both:float]
     """
     data = open(file,"r")
     if (ORF_end-ORF_start)%3 !=0:
@@ -92,7 +92,6 @@ def main():
     for key, value in protein_dict.items():
         print(f"{key}: {value}")
     print(f"frameshift_mutation : {frameshift_mutation}\nearly_stopping : {early_stopping}\nboth : {both}")
-    #print(protein_dict, seq, frameshift_mutation, early_stopping, both)
 
         
 if __name__ == "__main__":
