@@ -26,7 +26,7 @@ coden2aa_dict = {'TTT': "F", 'TTC': "F", 'TTA': "L", 'TTG': "L", 'CTA': "L", 'CT
 
 
 def get_percentage(file,ORF_start=3,ORF_end=12,cut_off=0.01,reverse=False):
-    """_summary_
+    """
     Args:
         file (_type_): Path to the file to be processed.
         ORF_start (int, optional): Start position of the ORF (Open Reading Frame). Must be an integer. Defaults to 3.
